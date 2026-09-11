@@ -1,12 +1,12 @@
 import { createAsyncThunk ,createSlice } from "@reduxjs/toolkit";
-import { getPopularPosts } from "../../services/redditApi";
+import { getPopularPosts } from "../../services/lemmyApi";
 
 
 const initialState = {
     items: [],
     status: "idle",
     error: null,
-    after: null,
+    nextPage: 1,
 };
 
 export const fetchPosts = createAsyncThunk(
@@ -30,7 +30,7 @@ const postsSlice = createSlice({
         .addCase(fetchPosts.fulfilled, (state, action) => {
             state.status = "succeeded";
             state.items = action.payload.posts;
-            state.after = action.payload.after;
+            state.nextPage = action.payload.nextPage;
         })
 
         .addCase(fetchPosts.rejected, (state, action) => {
@@ -43,7 +43,7 @@ const postsSlice = createSlice({
 export const selectPosts = (state) => state.posts.items;
 export const selectPostsStatus = (state) => state.posts.status;
 export const selectPostsError = (state) => state.posts.error;
-export const selectPostsAfter = (state) => state.posts.after;
+export const selectPostsNextPage = (state) => state.posts.nextPage;
 
 export default postsSlice.reducer;
 
