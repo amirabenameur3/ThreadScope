@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./PostCard.css";
 
 function PostCard({ post }) {
@@ -9,7 +10,9 @@ function PostCard({ post }) {
       </div>
 
       <div className="post-card__content">
-        <h2 className="post-card__title">{post.title}</h2>
+        <h2 className="post-card__title">
+          <Link to={`/post/${post.id}`}>{post.title}</Link>
+        </h2>
 
         <p className="post-card__meta">
           By {post.author} · {post.communityTitle}
