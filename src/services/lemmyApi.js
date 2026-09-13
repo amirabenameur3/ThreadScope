@@ -69,6 +69,16 @@ export async function getPostById(postId) {
   return normalizePost(lemmyResponse.post_view);
 }
 
+function getParentId(path) {
+  const pathParts = path.split(".").filter(Boolean);
+
+  if (pathParts.length <= 2) {
+    return null;
+  }
+
+  return Number(pathParts.at(-2));
+}
+
 export async function getCommentsByPostId(postId) {
   const parameters = new URLSearchParams({
     post_id: String(postId),
@@ -98,6 +108,6 @@ export async function getCommentsByPostId(postId) {
     upvotes: counts.upvotes,
     downvotes: counts.downvotes,
 
-    parentId: comment.parent_id,
+    parentId: getParentId(comment.path),
   }));
 }

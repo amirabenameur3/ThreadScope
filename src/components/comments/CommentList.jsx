@@ -1,15 +1,12 @@
-import CommentCard from "./CommentCard";
+import { buildCommentTree } from "../../utils/buildCommentTree";
+import CommentThread from "./CommentThread";
+
+import "./CommentList.css";
 
 function CommentList({ comments }) {
-  return (
-    <ul className="comment-list">
-      {comments.map((comment) => (
-        <li key={comment.id}>
-          <CommentCard comment={comment} />
-        </li>
-      ))}
-    </ul>
-  );
+  const commentTree = buildCommentTree(comments);
+
+  return <CommentThread comments={commentTree} />;
 }
 
 export default CommentList;

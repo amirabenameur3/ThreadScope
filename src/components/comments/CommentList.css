@@ -1,0 +1,18 @@
+.comment-thread {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment-thread--nested {
+  margin-left: 28px;
+  padding-left: 20px;
+  border-left: 2px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .comment-thread--nested {
+    margin-left: 14px;
+    padding-left: 12px;
+  }
+}
