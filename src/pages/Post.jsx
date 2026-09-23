@@ -44,7 +44,7 @@ function Post() {
   const commentsBelongToCurrentPost = commentsPostId === postId;
 
   return (
-    <main className="post-page">
+    <section className="post-page">
       <Link to="/" className="post-page__back">
         ← Back to posts
       </Link>
@@ -150,7 +150,7 @@ function Post() {
           </section>
         </article>
       )}
-    </main>
+    </section>
   );
 }
 

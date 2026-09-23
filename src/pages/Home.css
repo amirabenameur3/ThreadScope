@@ -1,8 +1,7 @@
 .home {
   width: 100%;
-  max-width: 960px;
-  margin-inline: auto;
-  padding: 40px 24px;
+  margin: 0;
+  padding: 0;
 }
 
 .home__header {
@@ -16,6 +15,7 @@
 }
 
 .home__header p {
+  margin: 0;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -53,10 +53,7 @@
 /* Mobile layout */
 
 @media (max-width: 600px) {
-  .home {
-    padding: 24px 12px;
-  }
-
+  
   .home__header {
     margin-bottom: 20px;
   }

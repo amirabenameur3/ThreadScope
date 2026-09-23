@@ -1,0 +1,118 @@
+.sidebar {
+  position: static;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 40px 20px;
+  overflow-y: auto;
+  color: var(--text);
+  background-color: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.sidebar__section {
+  margin-bottom: 32px;
+}
+
+.sidebar__heading {
+  display: block;
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar__community {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  color: var(--text);
+  font: inherit;
+  font-weight: 500;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar__community:hover {
+  color: var(--accent);
+  background-color: rgb(124 58 237 / 12%);
+}
+
+.sidebar__community--active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c3aed, #4f24d8);
+}
+
+.sidebar__community--active:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #6d28d9, #431cb5);
+}
+
+.sidebar__community-icon {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background-color: #6d28d9;
+  border-radius: 50%;
+}
+
+.sidebar__community--active .sidebar__community-icon {
+  color: #6d28d9;
+  background-color: #ffffff;
+}
+
+.sidebar__search input,
+.sidebar__select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.65rem 0.8rem;
+  color: var(--text);
+  font: inherit;
+  background-color: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+}
+
+.sidebar__search input:focus,
+.sidebar__select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgb(124 58 237 / 15%);
+}
+
+.sidebar__select {
+  cursor: pointer;
+}
+
+.sidebar__community:focus-visible {
+  outline: 3px solid rgb(124 58 237 / 30%);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+}
